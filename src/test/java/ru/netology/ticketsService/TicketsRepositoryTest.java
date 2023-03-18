@@ -48,7 +48,6 @@ public class TicketsRepositoryTest {
         Assertions.assertEquals(null, actual);
     }
 
-
     @Test
     public void removeByExistingId() {
         repo.removeById(13);
@@ -66,4 +65,10 @@ public class TicketsRepositoryTest {
         });
     }
 
+    @Test
+    public void doNotAddAnExistingId() {
+        Assertions.assertThrows(AlreadyExistsException.class, () -> {
+            repo.save(ticket3);
+        });
+    }
 }

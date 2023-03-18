@@ -1,5 +1,4 @@
 package ru.netology.ticketsService;
-
 public class TicketsRepository {
     private Tickets[] ticket = new Tickets[0];
 
